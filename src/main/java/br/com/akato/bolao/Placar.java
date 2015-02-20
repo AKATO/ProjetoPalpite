@@ -1,42 +1,37 @@
 package br.com.akato.bolao;
 
 public class Placar {
-	private Time timeA;
-	private Time timeB;
+	private Time casa;
+	private int golsTimeDaCasa;
+	private Time visitante;
+	private int golsTimeVisitante;
 	
 	public boolean isEmpate(){
-		if(timeA.getGols()==timeB.getGols()) return true;
+		if(golsTimeDaCasa==golsTimeVisitante) return true;
 		return false;
 	}
 	
+	public Placar(Time casa,int golsTimeDaCasa,Time visitante, int golsTimeVisitante){
+		this.casa = casa;
+		this.visitante = visitante;
+		this.golsTimeDaCasa = golsTimeDaCasa;
+		this.golsTimeVisitante = golsTimeVisitante;
+	}
+	
 	public Time getGanhador(){
-		return timeA.getGols()>timeB.getGols()? timeA:timeB;
+		return golsTimeDaCasa>golsTimeVisitante? casa:visitante;
 	}
 	
-	public int getPontosDoGanhador(){
-		return this.getGanhador().getGols();
+	public int getGolsDoGanhador(){
+		return golsTimeDaCasa>golsTimeVisitante? golsTimeDaCasa:golsTimeVisitante;
 	}
 	
-	public Placar(String nomeTimeA,int golsTimeA,String nomeTimeB, int golsTimeB){
-		this.timeA = new Time(nomeTimeA,golsTimeA);
-		this.timeB = new Time(nomeTimeB,golsTimeB);
-	}
-	
-	
-	protected Time getTimeA() {
-		return timeA;
-	}
-	
-	protected Time getTimeB() {
-		return timeB;
-	}
-	
-	protected void setTimeA(Time timeA) {
-		this.timeA = timeA;
+	public int getGolsTimeDaCasa() {
+		return golsTimeDaCasa;
 	}
 
-	protected void setTimeB(Time timeB) {
-		this.timeB = timeB;
+	public int getGolsTimeVisitante() {
+		return golsTimeVisitante;
 	}
-
+	
 }

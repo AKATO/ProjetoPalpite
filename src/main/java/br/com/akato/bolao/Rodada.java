@@ -7,12 +7,12 @@ import java.util.Map;
 
 public class Rodada {
 	private List<Jogo> jogos;
-	private List<PalpiteDeJogo> palpites;
+	private List<Palpite> palpites;
 	private Map<Integer,Integer> pontosPorJogo;
 	
 	public Rodada(){
 		this.jogos = new ArrayList<Jogo>();
-		this.palpites = new ArrayList<PalpiteDeJogo>();
+		this.palpites = new ArrayList<Palpite>();
 		this.pontosPorJogo = new HashMap<Integer,Integer>();
 	}
 	
@@ -22,11 +22,11 @@ public class Rodada {
 		}
 	}
 	
-	private int apuradorDePontos(Jogo jogo,PalpiteDeJogo palpite){
+	private int apuradorDePontos(Jogo jogo,Palpite palpite){
 		int pontos = 0;	
 		if(jogo.isEmpate()) return pontos;
 		if(palpite.getGanhador().getNome().equals(jogo.getGanhador().getNome())){pontos+=1;};
-		if(palpite.getPontosDoGanhador() == jogo.getPontosDoGanhador()){pontos +=1;}
+		if(palpite.getGolsDoGanhador() == jogo.getGolsDoGanhador()){pontos +=1;}
 		if(pontos==2){pontos +=1;}
 		return pontos;
 	}
@@ -35,7 +35,7 @@ public class Rodada {
 		return jogos;
 	}
 
-	public List<PalpiteDeJogo> getPalpites() {
+	public List<Palpite> getPalpites() {
 		return palpites;
 	}
 

@@ -14,14 +14,14 @@ public class Builder {
 	
 	
 	public void criarPalpites(){
-		rodada.getPalpites().add(new PalpiteDeJogo("Corinthians",2,"Sao Paulo",1));
-		rodada.getPalpites().add(new PalpiteDeJogo("Palmeiras", 0, "Ituano", 1));
+		rodada.getPalpites().add(new Palpite(new Time("Corinthians"),2,new Time("Sao Paulo"),1));
+		rodada.getPalpites().add(new Palpite(new Time("Palmeiras"), 0, new Time("Ituano"), 1));
 		
 	}
 	
 	public void criarJogos(){
-		rodada.getJogos().add(new Jogo("Corinthians",2,"Sao Paulo",0));
-		rodada.getJogos().add(new Jogo("Palmeiras", 0, "Ituano", 2));
+		rodada.getJogos().add(new Jogo(new Time("Corinthians"),2,new Time("Sao Paulo"),0));
+		rodada.getJogos().add(new Jogo(new Time("Palmeiras"), 0, new Time("Ituano"), 2));
 	}
-
+	
 }

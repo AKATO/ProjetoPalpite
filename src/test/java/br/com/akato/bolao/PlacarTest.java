@@ -22,7 +22,7 @@ public class PlacarTest extends Builder{
 	
 	@Test
 	public void validarMaiorPontuacao(){
-		Assert.assertEquals("O numero de Gols do Ganhador do jogo deveria ser o 2",2, rodada.getJogos().get(0).getPontosDoGanhador());
+		Assert.assertEquals("O numero de Gols do Ganhador do jogo deveria ser o 2",2, rodada.getJogos().get(0).getGolsDoGanhador());
 	}
 	
 }
