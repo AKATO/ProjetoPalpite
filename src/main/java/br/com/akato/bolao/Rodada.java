@@ -30,18 +30,29 @@ public class Rodada {
 		if(pontos==2){pontos +=1;}
 		return pontos;
 	}
-	
-	private void criarJogosPalpitesMock(){
-		this.palpites.add(new PalpiteDeJogo("Corinthians",2,"Sao Paulo",1));
-		this.palpites.add(new PalpiteDeJogo("Palmeiras", 0, "Ituano", 1));
-		
-		this.jogos.add(new Jogo("Corinthians",2,"Sao Paulo",0));
-		this.jogos.add(new Jogo("Palmeiras", 0, "Ituano", 2));
+
+	public List<Jogo> getJogos() {
+		return jogos;
 	}
 
-	public static void main(String[]Args){
-		Rodada rodadaBrasileirao = new Rodada();
-		rodadaBrasileirao.criarJogosPalpitesMock();
-		rodadaBrasileirao.calcularPontosNaRodada();
+	public List<PalpiteDeJogo> getPalpites() {
+		return palpites;
 	}
+
+	public Map<Integer, Integer> getPontosPorJogo() {
+		return pontosPorJogo;
+	}
+	
+//	public void addJogos(List<Jogo> jogos) {
+//		this.jogos.add(e) jogos;
+//	}
+//
+//	public void setPalpites(List<PalpiteDeJogo> palpites) {
+//		this.palpites = palpites;
+//	}
+//
+//	public void setPontosPorJogo(Map<Integer, Integer> pontosPorJogo) {
+//		this.pontosPorJogo = pontosPorJogo;
+//	}
+	
 }
