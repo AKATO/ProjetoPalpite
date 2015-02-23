@@ -8,7 +8,7 @@ public class Builder {
 	public void iniciaRodada(){
 		rodada = new Rodada();
 		criarPalpites();
-		criarJogos();
+		criarPartidas();
 		rodada.calcularPontosNaRodada();
 	}
 	
@@ -19,9 +19,9 @@ public class Builder {
 		
 	}
 	
-	public void criarJogos(){
-		rodada.getJogos().add(new Jogo(new Time("Corinthians"),2,new Time("Sao Paulo"),0));
-		rodada.getJogos().add(new Jogo(new Time("Palmeiras"), 0, new Time("Ituano"), 2));
+	public void criarPartidas(){
+		rodada.getPartidas().add(new Partida(new Time("Corinthians"),2,new Time("Sao Paulo"),0));
+		rodada.getPartidas().add(new Partida(new Time("Palmeiras"), 0, new Time("Ituano"), 2));
 	}
 	
 }

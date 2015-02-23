@@ -15,14 +15,14 @@ public class PlacarTest extends Builder{
 	
 	@Test
 	public void validarGanhador(){
-		Assert.assertEquals("O Ganhador do jogo deveria ser o Corinthians","Corinthians", rodada.getJogos().get(0).getGanhador().getNome());
+		Assert.assertEquals("O Ganhador do jogo deveria ser o Corinthians","Corinthians", rodada.getPartidas().get(0).getGanhador().getNome());
 		
 	}
 	
 	
 	@Test
 	public void validarMaiorPontuacao(){
-		Assert.assertEquals("O numero de Gols do Ganhador do jogo deveria ser o 2",2, rodada.getJogos().get(0).getGolsDoGanhador());
+		Assert.assertEquals("O numero de Gols do Ganhador do jogo deveria ser o 2",2, rodada.getPartidas().get(0).getGolsDoGanhador());
 	}
 	
 }
