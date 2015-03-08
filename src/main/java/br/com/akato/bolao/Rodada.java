@@ -6,19 +6,19 @@ import java.util.List;
 import java.util.Map;
 
 public class Rodada {
-	private List<Partida> partidas;
+	private List<Jogo> partidas;
 	private List<Palpite> palpites;
 	private Map<Integer,Integer> pontosPorJogo;
 	
 	public Rodada(){
-		this.partidas = new ArrayList<Partida>();
+		this.partidas = new ArrayList<Jogo>();
 		this.palpites = new ArrayList<Palpite>();
 		this.pontosPorJogo = new HashMap<Integer,Integer>();
 	}
 	
 	public void calcularPontosNaRodada(){
 		int cont = 0;
-		for(Partida partidaDeJogo:partidas){
+		for(Jogo partidaDeJogo:partidas){
 			pontosPorJogo.put(cont, apuradorDePontos(partidaDeJogo ,palpites.get(cont))); cont++;
 		}
 		
@@ -27,7 +27,7 @@ public class Rodada {
 //		}
 	}
 	
-	private int apuradorDePontos(Partida partida,Palpite palpite){
+	private int apuradorDePontos(Jogo partida,Palpite palpite){
 		int pontos = 0;	
 		if(partida.isEmpate()) return pontos;
 		if(palpite.getGanhador().getNome().equals(partida.getGanhador().getNome())){pontos+=1;};
