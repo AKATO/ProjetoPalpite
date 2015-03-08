@@ -37,7 +37,7 @@ public class Rodada {
 		return pontos;
 	}
 
-	public List<Partida> getPartidas() {
+	public List<Jogo> getPartidas() {
 		return partidas;
 	}
 
